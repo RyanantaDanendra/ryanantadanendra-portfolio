@@ -1,4 +1,5 @@
 import * as React from 'react';
+import '../App.css'
 import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -8,8 +9,11 @@ import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Slide from '@mui/material/Slide';
-import { Button } from '@mui/material';
+import { Button, createTheme } from '@mui/material';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
 import { dark } from '@mui/material/styles/createPalette';
+import PtSerif from '../assets/font/PTSerif-Regular.ttf';
 
 const pages = ["Home", "About", "Blog"];
 
@@ -39,19 +43,32 @@ HideOnScroll.propTypes = {
 };
 
 export default function HideAppBar(props) {
+  const theme = createTheme({
+    typography: {
+      fontFamily: 'PT-Serif',
+    },
+  })
+
   return (
     <React.Fragment>
       <CssBaseline />
       <HideOnScroll {...props}>
         <AppBar sx={{ bgcolor: 'rgba(255, 255, 255, 0)', boxShadow: 'none' }}>
           <Toolbar>
-            <Typography variant="h6" component="div" sx={{ mr: 3, color: 'black', }}>
-              Ryananta Danendra
-            </Typography>
+          <IconButton
+            size="large"
+            edge="start"
+            color="black"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+          >
+            <MenuIcon />
+          </IconButton>
+
             {pages.map((page) => (
                 <Button
                     key={page}
-                    sx={{ my: 2, color: 'white', display: 'block', color: 'black', }}
+                    sx={{ my: 2, display: 'block', color: 'black', fontFamily: 'PT-Serif' }}
                 >
                     {page}
                 </Button>
