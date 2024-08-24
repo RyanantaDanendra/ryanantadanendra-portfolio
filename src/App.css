@@ -58,3 +58,15 @@ body {
 .container {
   height: 200vh;
 }
+
+.about-image {
+  width: 600px;
+}
+
+.html-logo, .php-logo {
+  width: 100px;
+}
+
+.css-logo, .git-logo, .github-logo, .vscode-logo, .wp-logo {
+  width: 70px;
+}
