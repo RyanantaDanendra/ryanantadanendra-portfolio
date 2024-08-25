@@ -63,10 +63,10 @@ body {
   width: 600px;
 }
 
-.html-logo, .php-logo {
+.html-logo, .php-logo,.bootstrap-logo, .tailwind-logo, .react-logo {
   width: 100px;
 }
 
-.css-logo, .git-logo, .github-logo, .vscode-logo, .wp-logo {
+.css-logo, .git-logo, .github-logo, .vscode-logo, .wp-logo, .mui-logo, .laravel-logo {
   width: 70px;
 }

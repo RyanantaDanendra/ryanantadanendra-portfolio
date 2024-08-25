@@ -13,17 +13,22 @@ import Js from '../assets/Logo/js.png';
 import Git from '../assets/Logo/git.png';
 import Github from '../assets/Logo/github.png';
 import Vscode from '../assets/Logo/vscode.png';
-import Wp from '../assets/Logo/wordpress1.png'
+import Wp from '../assets/Logo/wordpress1.png';
+import Bootstrap from '../assets/Logo/bootstrap.png';
+import Tailwind from '../assets/Logo/tailwind.png';
+import ReactLogo from '../assets/Logo/react.png';
+import Mui from '../assets/Logo/mui.png';
+import Laravel from '../assets/Logo/laravel.png';
 
 const Skills = () => {
     return (
         <React.Fragment>
             <CssBaseline />
             <Container maxWidth={false} sx={{ 
-                height: '100%',
+                height: '100vh',
              }}>
                 <Typography variant='h3' sx={{ fontWeight: 'bold', marginLeft: '130px' }}>Skills</Typography>
-                <Grid container spacing={0} sx={{ marginTop: '20px', }}>
+                <Grid container spacing={0} sx={{ marginTop: '80px', }}>
                     <Grid item xs={5} sx={{ 
                         display: 'flex',
                         justifyContent: 'flex-end'
@@ -86,9 +91,25 @@ const Skills = () => {
                             width: '310px',
                             height: '410px',
                             backgroundColor: '#003366',  
-                            marginLeft: '10px'
+                            marginLeft: '10px',
+                            paddingTop: '20px',
+                            paddingX: '20px'
                         }}>
-
+                            <Typography variant='h5' sx={{ color: 'white', textAlign: 'center' }}>Frameworks</Typography>
+                            <Box sx={{ 
+                                marginTop: '20px',
+                                display: 'flex',
+                                flexWrap: 'wrap',
+                                justifyContent: 'center',
+                                gap: '10px',
+                                marginTop: '30px'
+                             }}>
+                                <img src={Bootstrap} alt="Bootstrap" className='bootstrap-logo' />
+                                <img src={Tailwind} alt="Tailwind" className='tailwind-logo' />
+                                <img src={ReactLogo} alt="React" className='react-logo' />
+                                <img src={Mui} alt="Material Ui" className='mui-logo' />
+                                <img src={Laravel} alt="Laravel Ui" className='laravel-logo' />
+                            </Box>
                         </Box>
                     </Grid>
                 </Grid>
