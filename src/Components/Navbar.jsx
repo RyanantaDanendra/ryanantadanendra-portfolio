@@ -45,7 +45,7 @@ HideOnScroll.propTypes = {
 export default function HideAppBar(props) {
   const theme = createTheme({
     typography: {
-      fontFamily: 'PT-Serif',
+      fontFamily: 'Poppins',
     },
   })
 
@@ -68,7 +68,7 @@ export default function HideAppBar(props) {
             {pages.map((page) => (
                 <Button
                     key={page}
-                    sx={{ my: 2, display: 'block', color: 'black', fontFamily: 'PT-Serif' }}
+                    sx={{ my: 2, display: 'block', color: 'black',}}
                 >
                     {page}
                 </Button>

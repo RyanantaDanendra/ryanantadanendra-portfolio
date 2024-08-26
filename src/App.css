@@ -70,3 +70,9 @@ body {
 .css-logo, .git-logo, .github-logo, .vscode-logo, .wp-logo, .mui-logo, .laravel-logo {
   width: 70px;
 }
+
+.project-img, .project-vid {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}

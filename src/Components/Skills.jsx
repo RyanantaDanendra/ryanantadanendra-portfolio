@@ -102,7 +102,6 @@ const Skills = () => {
                                 flexWrap: 'wrap',
                                 justifyContent: 'center',
                                 gap: '10px',
-                                marginTop: '30px'
                              }}>
                                 <img src={Bootstrap} alt="Bootstrap" className='bootstrap-logo' />
                                 <img src={Tailwind} alt="Tailwind" className='tailwind-logo' />
