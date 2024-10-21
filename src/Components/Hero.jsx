@@ -12,9 +12,10 @@ import PtSerif from '../assets/font/PTSerif-Regular.ttf';
 import Poppins from '../assets/font/Poppins-Regular.ttf'
 import { useState, useEffect } from 'react';
 import { Button } from '@mui/material';
-import Me from '../assets/me.png';
+import Me from '../assets/me1.png';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { Typewriter } from 'react-simple-typewriter';
 
 const Hero = () => {
     const theme = createTheme({
@@ -29,20 +30,24 @@ const Hero = () => {
             <Container maxWidth={false} sx={{
                 height: '100vh',
             }}>
-                <Grid container spacing={2}>
+                <Grid container spacing={0} sx={{ display: 'flex', justifyContent: 'center', paddingX: '20px' }}>
                     <Grid item xs={4} sx={{
-                        marginLeft: '150px', 
                         marginTop: '160px'
                     }}>
-                        <Typography variant='h2' sx={{ fontWeight: 'bold' }}>Ryananta <br /> Danendra</Typography>
+                        <div style={{ 
+                            fontSize: '3rem', 
+                            fontWeight: 'bold'
+                         }}>
+                           <Typewriter words={['Ryananta Danendra']} loop={0} cursor cursorStyle='|' delaySpeed={5000} deleteSpeed={130} sx={{ fontWeight: 'bold', fontSize: '2rem' }} className='name' />
+                        </div>
                         <Typography variant='h5' sx={{ marginTop: '10px' }}>Full - Stack Web Developer <br />
                         Building Scalable, Robust Web Applications</Typography>
-                        <Button sx={{ marginTop: '20px', paddingX: '40px', paddingY: '20px', backgroundColor: '#003366', borderRadius: '30px', color: 'white', '&:hover': { color: 'black', border: 'black 2px solid'} }}>Email Me</Button>
+                        <Button sx={{ marginTop: '20px', paddingX: '40px', paddingY: '20px', backgroundColor: '#003366', borderRadius: '30px', color: 'white', '&:hover': { color: 'black', border: 'black 2px solid', backgroundColor: 'white'} }}>Email Me</Button>
                     </Grid>
                     <Grid item xs={4}>
                         <img src={Me} alt="Me" className='hero-image' />
                     </Grid>
-                    <Grid item xs={2} sx={{ marginTop: '160px' }}>
+                    <Grid item xs={3} sx={{ marginTop: '160px', display: 'flex', justifyContent: 'center' }}>
                         <a href=""> 
                             <Box sx={{ 
                                 width: '150px',
