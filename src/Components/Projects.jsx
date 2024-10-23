@@ -16,12 +16,15 @@ import Ssamaya from '../assets/Logo/ssamaya.png';
 import SsamayaVideo from '../assets/Logo/ssamaya.mp4';
 import { IconButton } from '@mui/material';
 import InsertLinkIcon from '@mui/icons-material/InsertLink';
+// AOS
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const RenderProjects = ({project}) => {
     const [isHovered, setIsHovered] = useState(false);
 
         return (
-            <Grid item xs={6} sx={{ 
+            <Grid item xs={12} data-aos='fade-up' data-aos-delay='400' sx={{ 
                 display: 'flex',
                 justifyContent: 'center',
                 marginTop: '50px',
@@ -29,10 +32,6 @@ const RenderProjects = ({project}) => {
             <Box sx={{ 
                 width: '600px',
                 height: '700px',
-                backgroundColor: '#003366',
-                borderRadius: '10px',
-                boxShadow: '5px 2px 8px'
-
             }}>
                 <div
                 onMouseEnter={() => setIsHovered(true)}
@@ -53,12 +52,12 @@ const RenderProjects = ({project}) => {
                         display: 'flex',
                         justifyContent: 'space-between'
                      }}>
-                        <Typography variant='h2' sx={{ color: 'white', marginTop: '10px', fontWeight: 'bold' }}>{project.title}</Typography>
+                        <Typography variant='h2' sx={{ marginTop: '10px', fontWeight: 'bold' }}>{project.title}</Typography>
                         <a href={project.link}>
                             <IconButton>
                                 <InsertLinkIcon sx={{ 
                                     fontSize: '3rem',
-                                    color: 'white',
+                                    color: 'black',
                                     '&:hover': {
                                         opacity: '50%',
                                         transition: '.2s ease-in'
@@ -67,9 +66,7 @@ const RenderProjects = ({project}) => {
                             </IconButton>
                         </a>
                     </Box>
-                    <Typography variant='h5' sx={{ color: 'white',}}>{project.description}</Typography>
-                    <Typography variant='h5' sx={{ color: 'white', marginTop: '10px' }}>Made with: {project.madeWith}</Typography>
-                    <Typography variant='h5' sx={{ color: 'white', marginTop: '10px' }}>Made in: {project.duration}</Typography>
+                    <Typography variant='h5' sx={{ marginTop: '10px' }}>Made with: {project.madeWith}</Typography>
                 </Box>
             </Box>
         </Grid>
@@ -81,37 +78,29 @@ const Projects = () => {
         {
             title: 'Kicks',
             madeWith: 'HTML, Tailwind, Laravel',
-            duration: '2 Months',
             image: Kicks,
             video: KicksVideo,
-            description: 'An e-commerce website for a sneakers consignment store that allows you to buy and sell sneakers',
-            link: 'p'
+            link: 'https://github.com/RyanantaDanendra/latihan-Laravel'
         }, 
         {
             title: 'Tour',
             madeWith: 'HTML, Tailwind, Laravel',
-            duration: '2 Weeks',
             image: Tour,
             video: TourVideo,
-            description: 'A tour and travel website that allows you to book a tour package around Bali',
-            link: 'p'
+            link: 'https://github.com/RyanantaDanendra/tour'
         },
         {
             title: 'D Store',
             madeWith: 'HTML, Tailwind, React, Laravel',
-            duration: '2 Months',
             image: 'p',
             video: 'p',
-            description: 'An e-commerce website for a sneakers and apparels store that allows you to buy sneakers and apparels',
-            link: 'p'
+            link: 'https://github.com/RyanantaDanendra/dStore'
         },
         {
             title: 'Ssamaya spa',
             madeWith: 'Elementor ( Wordpress )',
-            duration: '1 Week',
             image: Ssamaya,
             video: SsamayaVideo,
-            description: 'An e-commerce website for a sneakers and apparels store that allows you to buy sneakers and apparels',
             link: 'https://ssamayaspabali.com/'
         },
     ];
@@ -119,8 +108,8 @@ const Projects = () => {
     return (
         <React.Fragment>
             <CssBaseline />
-            <Container maxWidth={false} sx={{ height: '100%' }}>
-                <Typography variant='h3' sx={{ fontWeight: 'bold', marginLeft: '130px' }}>Projects </Typography>
+            <Container maxWidth={false} sx={{ height: '100%', marginTop: '10rem' }}>
+                <Typography variant='h3' data-aos='fade-right' data-aos-delay='400' sx={{ fontWeight: 'bold', marginLeft: '130px' }}>Projects </Typography>
                 <Grid container spacing={0} sx={{ display: 'flex', justifyContent:'center',flexWrap: 'wrap', marginTop: '20px', }}>
                     {
                         projects.map((project, index) => (

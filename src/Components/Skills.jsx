@@ -19,6 +19,10 @@ import Tailwind from '../assets/Logo/tailwind.png';
 import ReactLogo from '../assets/Logo/react.png';
 import Mui from '../assets/Logo/mui.png';
 import Laravel from '../assets/Logo/laravel.png';
+import Mysql from '../assets/Logo/mysql.png';
+// AOS
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const languagesData = () => {
     const languageImages = [
@@ -27,7 +31,7 @@ const languagesData = () => {
 
     return languageImages.map((image, index) => {
         return (
-            <Box key={index} sx={{ width: '150px'}}>
+            <Box key={index} data-aos='fade-up' data-aos-delay='600' sx={{ width: '150px'}}>
                 <img src={image} alt="" className='skills-image' style={{ objectFit: 'contain', width: '200px', height: '200px' }}/>
             </Box>
         );
@@ -36,12 +40,26 @@ const languagesData = () => {
 
 const frameworksData = () => {
     const frameworkImages = [
-        Bootstrap, Tailwind, Laravel, Mui
+        Bootstrap, Tailwind, ReactLogo, Laravel, Mui
     ];
 
     return frameworkImages.map((image, index) => {
         return (
-            <Box key={index} sx={{ width: '150px'}}>
+            <Box key={index} data-aos='fade-up' data-aos-delay='600' sx={{ width: '150px'}}>
+                <img src={image} alt="" className='skills-image' style={{ objectFit: 'contain', width: '200px', height: '200px' }}/>
+            </Box>
+        )
+    })
+}
+
+const developerTools = () => {
+    const toolImages = [
+        Git, Github, Mysql, Wp, Vscode
+    ];
+
+    return toolImages.map((image, index) => {
+        return (
+            <Box key={index} data-aos='fade-up' data-aos-delay='600' sx={{ width: '150px'}}>
                 <img src={image} alt="" className='skills-image' style={{ objectFit: 'contain', width: '200px', height: '200px' }}/>
             </Box>
         )
@@ -60,13 +78,17 @@ const Skills = () => {
              }}>
                 <Typography variant='h3' sx={{ fontWeight: 'bold', marginLeft: '130px' }}>Skills</Typography>
                 <Grid container spacing={0} sx={{ marginTop: '80px', paddingX: '30px' }}>
-                    <Typography variant='h4'>Languages</Typography>
+                    <Typography variant='h4' data-aos='fade-right' data-aos-delay='400'>Languages</Typography>
                     <Grid item xs={12} sx={{ display: 'flex', gap: '10rem', justifyContent: 'center', marginTop: '50px' }}>
                         {languagesData()}
                     </Grid>
-                    <Typography variant='h4' sx={{ marginTop: '8rem' }}>Frameworks & Library</Typography>
-                    <Grid item xs={12} sx={{ display: 'flex', gap: '10rem', justifyContent: 'center', marginTop: '50px' }}>
+                    <Typography variant='h4' data-aos='fade-right' data-aos-delay='400' sx={{ marginTop: '8rem' }}>Frameworks & Library</Typography>
+                    <Grid item xs={12} sx={{ display: 'flex', gap: '10rem', justifyContent: 'center',flexWrap: 'wrap', marginTop: '50px' }}>
                         {frameworksData()}
+                    </Grid>
+                    <Typography variant='h4' data-aos='fade-right' data-aos-delay='400' sx={{ marginTop: '8rem' }}>Developer Tools</Typography>
+                    <Grid item xs={12} sx={{ display: 'flex', gap: '10rem', justifyContent: 'center',flexWrap: 'wrap', marginTop: '50px' }}>
+                        {developerTools()}
                     </Grid>
                 </Grid>
             </Container>

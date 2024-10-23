@@ -17,6 +17,9 @@ import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
+// AOS
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const experienceListRow = () => {
     const experiences = [
@@ -59,9 +62,9 @@ const About = () => {
                 paddingTop: '50px',
                 paddingBottom: '110px'
             }}>
-                <Typography variant='h3' sx={{ fontWeight: 'bold', marginLeft: '130px', }}>About</Typography>
+                <Typography data-aos='fade-right' data-aos-delay='300' sx={{ fontWeight: 'bold', marginLeft: '130px', fontSize: '3rem' }}>About</Typography>
                 <Grid container spacing={3} sx={{ paddingX: '130px'  }}>
-                    <Grid item xs={6} sx={{ marginTop: '40px' }}>
+                    <Grid item data-aos='fade-right' data-aos-delay='400' xs={6} sx={{ marginTop: '40px' }}>
                         <Typography variant='h4' sx={{ textAlign: 'center' }}>HEY THERE!</Typography>
                         <Typography variant='h6' sx={{ marginTop: '20px' }}>My name is A. A. Ngurah Bagus Ryananta Danendra, you can call me Danend 
                             <br />
@@ -73,7 +76,7 @@ const About = () => {
                             im currently a student at ITB Stikom Bali
                         </Typography>
                     </Grid>
-                    <Grid item xs={6} sx={{ marginTop: '40px' }}>
+                    <Grid item data-aos='fade-left' data-aos-delay='400' xs={6} sx={{ marginTop: '40px' }}>
                         <Typography variant='h4' sx={{ textAlign: 'center' }}>Experience</Typography>
                         {/* <FixedSizeList
                             height={400}
