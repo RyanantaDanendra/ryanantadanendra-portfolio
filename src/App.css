@@ -68,15 +68,26 @@ body {
   width: 600px;
 }
 
-.html-logo, .php-logo,.bootstrap-logo, .tailwind-logo, .react-logo {
+.html-logo,
+.php-logo,
+.bootstrap-logo,
+.tailwind-logo,
+.react-logo {
   width: 100px;
 }
 
-.css-logo, .git-logo, .github-logo, .vscode-logo, .wp-logo, .mui-logo, .laravel-logo {
+.css-logo,
+.git-logo,
+.github-logo,
+.vscode-logo,
+.wp-logo,
+.mui-logo,
+.laravel-logo {
   width: 70px;
 }
 
-.project-img, .project-vid {
+.project-img,
+.project-vid {
   width: 100%;
   height: 300px;
   object-fit: cover;
@@ -84,7 +95,7 @@ body {
 
 /* RISE UP */
 .skills-image:hover {
-  animation: rise .3s ease-out forwards;
+  animation: rise 0.3s ease-out forwards;
 }
 
 @keyframes rise {
@@ -93,5 +104,21 @@ body {
   }
   to {
     transform: translateY(-20px);
+  }
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 400px) {
+  .hero-image {
+    width: 20rem;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .image-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  .hero-griditm3 {
+    margin-top: 200px;
   }
 }
