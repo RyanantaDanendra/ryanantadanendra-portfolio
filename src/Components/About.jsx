@@ -70,7 +70,7 @@ const About = () => {
           sx={{
             fontWeight: "bold",
             marginLeft: { xs: 0, lg: "130px" },
-            fontSize: "3rem",
+            fontSize: { xs: "2rem", md: "2.5rem", lg: "3rem" },
             textAlign: { xs: "center", lg: "left" },
           }}
         >
@@ -93,7 +93,13 @@ const About = () => {
           >
             <Typography
               variant="h4"
-              sx={{ textAlign: { lg: "justify", xs: "center" } }}
+              sx={{
+                textAlign: {
+                  lg: "justify",
+                  xs: "center",
+                  fontSize: { xs: "1.5rem", md: "2rem", lg: "2.5rem" },
+                },
+              }}
             >
               HEY THERE!
             </Typography>
