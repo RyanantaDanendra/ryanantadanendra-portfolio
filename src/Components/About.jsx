@@ -57,6 +57,7 @@ const About = () => {
       <CssBaseline />
       <Container
         maxWidth={false}
+        id="About"
         sx={{
           height: "100%",
           marginTop: "20px",

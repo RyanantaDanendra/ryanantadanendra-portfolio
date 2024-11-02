@@ -37,6 +37,7 @@ const Hero = () => {
       <CssBaseline />
       <Container
         maxWidth={false}
+        id="Home"
         sx={{
           minHeight: "100vh",
           minWidth: "100vw",
@@ -64,7 +65,7 @@ const Hero = () => {
             <div
               style={{
                 fontSize: "3rem",
-                fontWeight: "bold",
+                fontWeight: 600,
               }}
               className="typewriter-wrapper"
             >

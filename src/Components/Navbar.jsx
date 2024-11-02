@@ -1,21 +1,21 @@
-import * as React from 'react';
-import '../App.css'
-import PropTypes from 'prop-types';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import CssBaseline from '@mui/material/CssBaseline';
-import useScrollTrigger from '@mui/material/useScrollTrigger';
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Slide from '@mui/material/Slide';
-import { Button, createTheme } from '@mui/material';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import { dark } from '@mui/material/styles/createPalette';
-import PtSerif from '../assets/font/PTSerif-Regular.ttf';
+import * as React from "react";
+import "../App.css";
+import PropTypes from "prop-types";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import CssBaseline from "@mui/material/CssBaseline";
+import useScrollTrigger from "@mui/material/useScrollTrigger";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Slide from "@mui/material/Slide";
+import { Button, createTheme } from "@mui/material";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
+import { dark } from "@mui/material/styles/createPalette";
+import PtSerif from "../assets/font/PTSerif-Regular.ttf";
 
-const pages = ["Home", "About", "Blog"];
+const pages = ["Home", "About", "Skills", "Projects"];
 
 function HideOnScroll(props) {
   const { children, window } = props;
@@ -45,33 +45,40 @@ HideOnScroll.propTypes = {
 export default function HideAppBar(props) {
   const theme = createTheme({
     typography: {
-      fontFamily: 'Poppins',
+      fontFamily: "Poppins",
     },
-  })
+  });
 
   return (
     <React.Fragment>
       <CssBaseline />
       <HideOnScroll {...props}>
-        <AppBar sx={{ bgcolor: 'rgba(255, 255, 255, 0)', boxShadow: 'none' }}>
+        <AppBar
+          sx={{
+            bgcolor: "rgba(255, 255, 255, 0.2)",
+            boxShadow: "none",
+            backdropFilter: "blur(5.2px)",
+          }}
+        >
           <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="black"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
+            <IconButton
+              size="large"
+              edge="start"
+              color="black"
+              aria-label="menu"
+              sx={{ mr: 2 }}
+            >
+              <MenuIcon />
+            </IconButton>
 
             {pages.map((page) => (
-                <Button
-                    key={page}
-                    sx={{ my: 2, display: 'block', color: 'black',}}
-                >
-                    {page}
-                </Button>
+              <Button
+                key={page}
+                sx={{ my: 2, display: "block", color: "black" }}
+                href={"#" + `${page}`}
+              >
+                {page}
+              </Button>
             ))}
           </Toolbar>
         </AppBar>

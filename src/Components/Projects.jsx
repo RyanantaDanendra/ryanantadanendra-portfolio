@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../App.css";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
@@ -26,6 +26,132 @@ import "aos/dist/aos.css";
 
 const RenderProjects = ({ project }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth > 800);
+
+  useEffect(() => {
+    const handleRezise = () => setScreenWidth(window.innerWidth > 800);
+
+    window.addEventListener("resize", handleRezise);
+
+    return () => window.removeEventListener("resize", handleRezise);
+  }, []);
+
+  const renderCondition = () => {
+    if (screenWidth) {
+      return (
+        <Box
+          sx={{
+            width: "600px",
+            height: "700px",
+          }}
+        >
+          <div
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            style={{
+              width: "100%",
+              height: "300px",
+              objectFit: "cover",
+            }}
+          >
+            {isHovered ? (
+              <video
+                src={project.video}
+                autoPlay
+                muted
+                className="project-vid"
+              />
+            ) : (
+              <img src={project.image} alt="image" className="project-img" />
+            )}
+          </div>
+          <Box sx={{ paddingX: "30px" }}>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+              }}
+            >
+              <Typography
+                variant="h2"
+                sx={{ marginTop: "10px", fontWeight: "bold" }}
+              >
+                {project.title}
+              </Typography>
+              <a href={project.link}>
+                <IconButton>
+                  <InsertLinkIcon
+                    sx={{
+                      fontSize: "3rem",
+                      color: "black",
+                      "&:hover": {
+                        opacity: "50%",
+                        transition: ".2s ease-in",
+                      },
+                    }}
+                  />
+                </IconButton>
+              </a>
+            </Box>
+            <Typography variant="h5" sx={{ marginTop: "10px" }}>
+              Made with: {project.madeWith}
+            </Typography>
+          </Box>
+        </Box>
+      );
+    } else {
+      return (
+        <Box
+          sx={{
+            width: "600px",
+            height: "700px",
+          }}
+        >
+          <div
+            style={{
+              width: "100%",
+              height: "300px",
+              objectFit: "cover",
+            }}
+          >
+            <video src={project.video} autoPlay muted className="project-vid" />
+          </div>
+          <Box sx={{ paddingX: "30px" }}>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+              }}
+            >
+              <Typography
+                variant="h2"
+                sx={{ marginTop: "10px", fontWeight: "bold" }}
+              >
+                {project.title}
+              </Typography>
+              <a href={project.link}>
+                <IconButton>
+                  <InsertLinkIcon
+                    sx={{
+                      fontSize: "3rem",
+                      color: "black",
+                      "&:hover": {
+                        opacity: "50%",
+                        transition: ".2s ease-in",
+                      },
+                    }}
+                  />
+                </IconButton>
+              </a>
+            </Box>
+            <Typography variant="h5" sx={{ marginTop: "10px" }}>
+              Made with: {project.madeWith}
+            </Typography>
+          </Box>
+        </Box>
+      );
+    }
+  };
 
   return (
     <Grid
@@ -39,7 +165,8 @@ const RenderProjects = ({ project }) => {
         marginTop: "50px",
       }}
     >
-      <Box
+      {renderCondition()}
+      {/* <Box
         sx={{
           width: "600px",
           height: "700px",
@@ -92,7 +219,7 @@ const RenderProjects = ({ project }) => {
             Made with: {project.madeWith}
           </Typography>
         </Box>
-      </Box>
+      </Box> */}
     </Grid>
   );
 };
@@ -139,12 +266,21 @@ const Projects = () => {
   return (
     <React.Fragment>
       <CssBaseline />
-      <Container maxWidth={false} sx={{ height: "100%", marginTop: "10rem" }}>
+      <Container
+        maxWidth={false}
+        id="Projects"
+        sx={{ height: "100%", marginTop: "10rem" }}
+      >
         <Typography
           variant="h3"
           data-aos="fade-right"
           data-aos-delay="400"
-          sx={{ fontWeight: "bold", marginLeft: "130px" }}
+          sx={{
+            fontWeight: "bold",
+            marginLeft: { lg: "130px", sm: 0 },
+            fontSize: { xs: "2rem", md: "2.5rem", lg: "3rem" },
+            textAlign: { lg: "left", sm: "center", xs: "center" },
+          }}
         >
           Projects{" "}
         </Typography>
