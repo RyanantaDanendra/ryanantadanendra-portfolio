@@ -107,9 +107,10 @@ const Skills = () => {
           variant="h3"
           sx={{
             fontWeight: "bold",
-            fontSize: { xs: "2rem", md: "2.5rem", lg: "3rem" },
+            fontSize: { xs: "2rem", md: "2.5rem", lg: "4rem" },
             marginLeft: { lg: "130px", sm: 0 },
             textAlign: { lg: "left", sm: "center", xs: "center" },
+            fontFamily: "Poppins",
           }}
         >
           Skills
@@ -125,6 +126,7 @@ const Skills = () => {
               textAlign: { lg: "left", sm: "center", xs: "center" },
               width: "100vw",
               fontSize: { xs: "1.5rem", md: "2rem", lg: "2.2rem" },
+              fontFamily: "Poppins",
             }}
             data-aos="fade-right"
             data-aos-delay="400"
@@ -158,6 +160,7 @@ const Skills = () => {
               textAlign: { lg: "left", sm: "center", xs: "center" },
               width: "100vw",
               fontSize: { xs: "1.5rem", md: "2rem", lg: "2.2rem" },
+              fontFamily: "Poppins",
             }}
           >
             Frameworks & Libraries
@@ -185,6 +188,7 @@ const Skills = () => {
               textAlign: { lg: "left", xs: "center" },
               width: "100vw",
               fontSize: { xs: "1.5rem", md: "2rem", lg: "2.2rem" },
+              fontFamily: "Poppins",
             }}
           >
             Developer Tools

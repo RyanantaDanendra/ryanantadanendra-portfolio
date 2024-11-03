@@ -8,8 +8,6 @@ import { Grid } from "@mui/material";
 import { Paper } from "@mui/material";
 import { Typography } from "@mui/material";
 import { createTheme } from "@mui/material";
-import PtSerif from "../assets/font/PTSerif-Regular.ttf";
-import Poppins from "../assets/font/Poppins-Regular.ttf";
 import { useState, useEffect } from "react";
 import { Button } from "@mui/material";
 import Me from "../assets/me1.png";
@@ -20,17 +18,17 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const Hero = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-    });
-  }, []);
+  // useEffect(() => {
+  //   AOS.init({
+  //     duration: 1000,
+  //   });
+  // }, []);
 
-  const theme = createTheme({
-    typography: {
-      fontFamily: "PT-Serif",
-    },
-  });
+  // const theme = createTheme({
+  //   Typography: {
+  //     fontFamily: "Poppins",
+  //   },
+  // });
 
   return (
     <React.Fragment>
@@ -39,7 +37,7 @@ const Hero = () => {
         maxWidth={false}
         id="Home"
         sx={{
-          minHeight: "100vh",
+          MaxHeight: "100vh",
           minWidth: "100vw",
         }}
       >
@@ -56,6 +54,7 @@ const Hero = () => {
           <Grid
             item
             lg={4}
+            md={4}
             xs={12}
             sx={{
               marginTop: "160px",
@@ -65,7 +64,8 @@ const Hero = () => {
             <div
               style={{
                 fontSize: "3rem",
-                fontWeight: 600,
+                fontWeight: 900,
+                fontFamily: "Poppins-bold",
               }}
               className="typewriter-wrapper"
             >
@@ -77,7 +77,7 @@ const Hero = () => {
                 delaySpeed={5000}
                 deleteSpeed={130}
                 sx={{
-                  fontWeight: "bold",
+                  fontWeight: 900,
                   fontSize: "2rem",
                 }}
                 className="name"
@@ -109,13 +109,14 @@ const Hero = () => {
                   color: "black",
                   border: "black 2px solid",
                   backgroundColor: "white",
+                  transition: ".2s ease-out !important",
                 },
               }}
             >
               Email Me
             </Button>
           </Grid>
-          <Grid item lg={4} md={12} xs={12}>
+          <Grid item lg={4} md={4} xs={12}>
             <Box className="image-wrapper">
               <img
                 src={Me}
@@ -131,12 +132,16 @@ const Hero = () => {
           <Grid
             item
             lg={2}
-            xs={12}
+            md={2}
+            xs={9}
             sx={{
-              marginLeft: "7rem",
+              marginLeft: { lg: "7rem", xs: 0 },
               display: "flex",
-              flexDirection: "column",
+              alignItems: { xs: "center" },
+              flexDirection: { lg: "column", xs: "row" },
               justifyContent: "center",
+              marginTop: { xs: "3rem" },
+              gap: { xs: "2rem" },
             }}
             className="hero-griditm3"
           >
@@ -145,16 +150,18 @@ const Hero = () => {
                 data-aos="zoom-out"
                 data-aos-delay="2800"
                 sx={{
-                  width: "150px",
-                  height: "150px",
+                  width: { lg: "150px", xs: "120px" },
+                  height: { lg: "150px", xs: "120px" },
                   backgroundColor: "#003366",
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
                   borderRadius: "20px",
+
                   "&:hover": {
                     backgroundColor: "white",
                     border: "2px solid black",
+                    transition: ".2s ease-out !important",
                     "&:hover .MuiSvgIcon-root": {
                       color: "black",
                       transition: ".2s ease-out",
@@ -170,17 +177,18 @@ const Hero = () => {
                 data-aos="zoom-out"
                 data-aos-delay="2800"
                 sx={{
-                  width: "150px",
-                  height: "150px",
+                  width: { lg: "150px", xs: "120px" },
+                  height: { lg: "150px", xs: "120px" },
                   backgroundColor: "#003366",
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
                   borderRadius: "20px",
-                  marginTop: "20px",
+                  marginTop: { lg: "20px", xs: 0 },
                   "&:hover": {
                     backgroundColor: "white",
                     border: "2px solid black",
+                    transition: ".2s ease-out !important",
                     "&:hover .MuiSvgIcon-root": {
                       color: "black",
                       transition: ".2s ease-out",

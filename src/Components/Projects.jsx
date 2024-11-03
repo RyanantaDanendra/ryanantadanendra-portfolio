@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import "../App.css";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
@@ -27,13 +27,33 @@ import "aos/dist/aos.css";
 const RenderProjects = ({ project }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth > 800);
+  const videoRef = useRef(null);
 
   useEffect(() => {
+    // SCREEN WIDTH
     const handleRezise = () => setScreenWidth(window.innerWidth > 800);
-
     window.addEventListener("resize", handleRezise);
 
-    return () => window.removeEventListener("resize", handleRezise);
+    // ON SCROLL
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            videoRef.current.play();
+          } else {
+            videoRef.current.pause();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (videoRef.current) observer.observe(videoRef.current);
+
+    return () => {
+      window.removeEventListener("resize", handleRezise);
+      if (videoRef.current) observer.unobserve(videoRef.current);
+    };
   }, []);
 
   const renderCondition = () => {
@@ -74,7 +94,11 @@ const RenderProjects = ({ project }) => {
             >
               <Typography
                 variant="h2"
-                sx={{ marginTop: "10px", fontWeight: "bold" }}
+                sx={{
+                  marginTop: "10px",
+                  fontWeight: "bold",
+                  fontFamily: "Poppins",
+                }}
               >
                 {project.title}
               </Typography>
@@ -83,6 +107,7 @@ const RenderProjects = ({ project }) => {
                   <InsertLinkIcon
                     sx={{
                       fontSize: "3rem",
+                      fontFamily: "Poppins",
                       color: "black",
                       "&:hover": {
                         opacity: "50%",
@@ -93,7 +118,10 @@ const RenderProjects = ({ project }) => {
                 </IconButton>
               </a>
             </Box>
-            <Typography variant="h5" sx={{ marginTop: "10px" }}>
+            <Typography
+              variant="h5"
+              sx={{ marginTop: "10px", fontFamily: "Poppins" }}
+            >
               Made with: {project.madeWith}
             </Typography>
           </Box>
@@ -103,8 +131,9 @@ const RenderProjects = ({ project }) => {
       return (
         <Box
           sx={{
-            width: "600px",
-            height: "700px",
+            width: { lg: "600px", xs: "300px" },
+            height: { lg: "700px", xs: "200px" },
+            marginBottom: "30rem",
           }}
         >
           <div
@@ -114,9 +143,16 @@ const RenderProjects = ({ project }) => {
               objectFit: "cover",
             }}
           >
-            <video src={project.video} autoPlay muted className="project-vid" />
+            <video
+              src={project.video}
+              autoPlay
+              muted
+              ref={videoRef}
+              className="project-vid"
+              style={{ objectFit: "contain" }}
+            />
           </div>
-          <Box sx={{ paddingX: "30px" }}>
+          <Box sx={{ paddingX: "10px" }}>
             <Box
               sx={{
                 display: "flex",
@@ -125,7 +161,12 @@ const RenderProjects = ({ project }) => {
             >
               <Typography
                 variant="h2"
-                sx={{ marginTop: "10px", fontWeight: "bold" }}
+                sx={{
+                  marginTop: "10px",
+                  fontWeight: "bold",
+                  fontSize: "2rem",
+                  fontFamily: "Poppins",
+                }}
               >
                 {project.title}
               </Typography>
@@ -133,7 +174,8 @@ const RenderProjects = ({ project }) => {
                 <IconButton>
                   <InsertLinkIcon
                     sx={{
-                      fontSize: "3rem",
+                      fontSize: "2.8rem",
+                      fontFamily: "Poppins",
                       color: "black",
                       "&:hover": {
                         opacity: "50%",
@@ -144,7 +186,14 @@ const RenderProjects = ({ project }) => {
                 </IconButton>
               </a>
             </Box>
-            <Typography variant="h5" sx={{ marginTop: "10px" }}>
+            <Typography
+              variant="h5"
+              sx={{
+                marginTop: "10px",
+                fontSize: ".9rem",
+                fontFamily: "Poppins",
+              }}
+            >
               Made with: {project.madeWith}
             </Typography>
           </Box>
@@ -166,60 +215,6 @@ const RenderProjects = ({ project }) => {
       }}
     >
       {renderCondition()}
-      {/* <Box
-        sx={{
-          width: "600px",
-          height: "700px",
-        }}
-      >
-        <div
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-          style={{
-            width: "100%",
-            height: "300px",
-            objectFit: "cover",
-          }}
-        >
-          {isHovered ? (
-            <video src={project.video} autoPlay muted className="project-vid" />
-          ) : (
-            <img src={project.image} alt="image" className="project-img" />
-          )}
-        </div>
-        <Box sx={{ paddingX: "30px" }}>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "space-between",
-            }}
-          >
-            <Typography
-              variant="h2"
-              sx={{ marginTop: "10px", fontWeight: "bold" }}
-            >
-              {project.title}
-            </Typography>
-            <a href={project.link}>
-              <IconButton>
-                <InsertLinkIcon
-                  sx={{
-                    fontSize: "3rem",
-                    color: "black",
-                    "&:hover": {
-                      opacity: "50%",
-                      transition: ".2s ease-in",
-                    },
-                  }}
-                />
-              </IconButton>
-            </a>
-          </Box>
-          <Typography variant="h5" sx={{ marginTop: "10px" }}>
-            Made with: {project.madeWith}
-          </Typography>
-        </Box>
-      </Box> */}
     </Grid>
   );
 };
@@ -278,8 +273,9 @@ const Projects = () => {
           sx={{
             fontWeight: "bold",
             marginLeft: { lg: "130px", sm: 0 },
-            fontSize: { xs: "2rem", md: "2.5rem", lg: "3rem" },
+            fontSize: { xs: "2rem", md: "2.5rem", lg: "4rem" },
             textAlign: { lg: "left", sm: "center", xs: "center" },
+            fontFamily: "Poppins",
           }}
         >
           Projects{" "}

@@ -1,12 +1,11 @@
-import "../App.css";
 import * as React from "react";
+import "../App.css";
+import { useEffect } from "react";
 import { Container } from "@mui/material";
 import { CssBaseline } from "@mui/material";
 import { Grid } from "@mui/material";
 import { Typography } from "@mui/material";
-import { createTheme } from "@mui/material";
 import Me from "../assets/hero.jpeg";
-import Poppins from "../assets/font/Poppins-Regular.ttf";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import { FixedSizeList } from "react-window";
@@ -35,7 +34,9 @@ const experienceListRow = () => {
               <TimelineDot />
               <TimelineConnector />
             </TimelineSeparator>
-            <TimelineContent sx={{ textAlign: "justify" }}>
+            <TimelineContent
+              sx={{ textAlign: "justify", fontFamily: "Poppins" }}
+            >
               {experience}
             </TimelineContent>
           </TimelineItem>
@@ -46,11 +47,11 @@ const experienceListRow = () => {
 };
 
 const About = () => {
-  const theme = createTheme({
-    typography: {
-      fontFamily: "Poppins",
-    },
-  });
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  }, []);
 
   return (
     <React.Fragment>
@@ -71,8 +72,9 @@ const About = () => {
           sx={{
             fontWeight: "bold",
             marginLeft: { xs: 0, lg: "130px" },
-            fontSize: { xs: "2rem", md: "2.5rem", lg: "3rem" },
+            fontSize: { xs: "2rem", md: "2.5rem", lg: "4rem" },
             textAlign: { xs: "center", lg: "left" },
+            fontFamily: "Poppins",
           }}
         >
           About
@@ -99,6 +101,7 @@ const About = () => {
                   lg: "justify",
                   xs: "center",
                   fontSize: { xs: "1.5rem", md: "2rem", lg: "2.5rem" },
+                  fontFamily: "Poppins",
                 },
               }}
             >
@@ -106,7 +109,11 @@ const About = () => {
             </Typography>
             <Typography
               variant="h6"
-              sx={{ marginTop: "20px", textAlign: "justify" }}
+              sx={{
+                marginTop: "20px",
+                textAlign: "justify",
+                fontFamily: "Poppins",
+              }}
             >
               My name is A. A. Ngurah Bagus Ryananta Danendra, you can call me
               Danend
@@ -128,7 +135,10 @@ const About = () => {
             xs={12}
             sx={{ marginTop: "40px" }}
           >
-            <Typography variant="h4" sx={{ textAlign: "center" }}>
+            <Typography
+              variant="h4"
+              sx={{ textAlign: "center", fontFamily: "Poppins" }}
+            >
               Experience
             </Typography>
             <Timeline>{experienceListRow()}</Timeline>
