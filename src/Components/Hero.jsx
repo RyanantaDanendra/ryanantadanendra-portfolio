@@ -66,6 +66,7 @@ const Hero = () => {
                 fontSize: "3rem",
                 fontWeight: 900,
                 fontFamily: "Poppins-bold",
+                height: "10rem",
               }}
               className="typewriter-wrapper"
             >
@@ -88,8 +89,9 @@ const Hero = () => {
               data-aos-delay="1500"
               variant="h5"
               sx={{
-                marginTop: "10px",
+                marginTop: { lg: "10px" },
               }}
+              className="hero-header-2"
             >
               Full - Stack Web Developer <br />
               Building Scalable, Robust Web Applications

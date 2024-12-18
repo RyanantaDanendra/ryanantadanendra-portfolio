@@ -17,6 +17,8 @@ import SsamayaVideo from "../assets/Logo/ssamaya.mp4";
 import Dstore from "../assets/Logo/dstore_image.png";
 import DstoreVideo from "../assets/Logo/dstore_video.mp4";
 import Dmovie from "../assets/Logo/dmovie_image.jpg";
+import Dimages from "../assets/Logo/dimages_image.jpg";
+import DimagesVideo from "../assets/Logo/dimages_video.mp4";
 import DmovieVideo from "../assets/Logo/dmovie_video.mp4";
 import { IconButton } from "@mui/material";
 import InsertLinkIcon from "@mui/icons-material/InsertLink";
@@ -255,6 +257,13 @@ const Projects = () => {
       image: Dmovie,
       video: DmovieVideo,
       link: "https://github.com/RyanantaDanendra/dMovie",
+    },
+    {
+      title: "D Images",
+      madeWith: "React Js, Pixabay ( API )",
+      image: Dimages,
+      video: DimagesVideo,
+      link: "https://github.com/RyanantaDanendra/dImages",
     },
   ];
 
