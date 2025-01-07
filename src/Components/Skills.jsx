@@ -35,7 +35,7 @@ const languagesData = () => {
         key={index}
         data-aos="fade-up"
         data-aos-delay="600"
-        sx={{ width: "80px" }}
+        sx={{ width: { md: "80px", xs: "50px" } }}
         className="skills-image-wrapper"
       >
         <img
@@ -58,13 +58,13 @@ const frameworksData = () => {
         key={index}
         data-aos="fade-up"
         data-aos-delay="600"
-        sx={{ width: "100px", marginTop: "2rem" }}
+        sx={{ width: { md: "100px", xs: "60px" }, marginTop: "2rem" }}
       >
         <img
           src={image}
           alt=""
           className="skills-image"
-          style={{ width: "100%" }}
+          style={{ width: "100%", objectFit: "cover" }}
         />
       </Box>
     );
@@ -80,7 +80,7 @@ const developerTools = () => {
         key={index}
         data-aos="fade-up"
         data-aos-delay="600"
-        sx={{ width: "100px" }}
+        sx={{ width: { md: "100px", xs: "60px" } }}
       >
         <img
           src={image}
@@ -138,7 +138,9 @@ const Skills = () => {
             }}
             className="skills-griditm1"
           >
-            <Typography>Languages</Typography>
+            <Typography sx={{ paddingLeft: { xs: "3rem" } }}>
+              Languages
+            </Typography>
             <Box
               className="skills-wrapper"
               sx={{
@@ -149,6 +151,7 @@ const Skills = () => {
                 justifyContent: "center",
                 gap: "2rem",
                 boxShadow: "none",
+                paddingX: { xs: "3rem" },
               }}
             >
               {languagesData()}
@@ -159,10 +162,12 @@ const Skills = () => {
             md={5}
             sx={{
               marginTop: { md: "50px", xs: 0 },
-              paddingRight: { xs: "2rem", lg: 0 },
+              // paddingRight: { xs: "2rem", lg: 0 },
             }}
           >
-            <Typography>Frameworks</Typography>
+            <Typography sx={{ paddingLeft: { xs: "4rem" } }}>
+              Frameworks
+            </Typography>
             <Box
               className="skills-wrapper"
               sx={{
@@ -172,6 +177,7 @@ const Skills = () => {
                 gap: "1rem",
                 justifyContent: "center",
                 flexWrap: "wrap",
+                paddingX: { xs: "3rem" },
               }}
             >
               {frameworksData()}
@@ -180,9 +186,11 @@ const Skills = () => {
           <Grid
             item
             md={5}
-            sx={{
-              paddingX: { xs: "2rem", lg: 0 },
-            }}
+            sx={
+              {
+                // paddingX: { xs: "2rem", lg: 0 },
+              }
+            }
           >
             <Typography
               variant="h3"
@@ -191,6 +199,7 @@ const Skills = () => {
               sx={{
                 fontFamily: "Poppins",
                 fontSize: "1rem",
+                paddingLeft: { xs: "3rem" },
               }}
             >
               Developer Tools
@@ -205,6 +214,7 @@ const Skills = () => {
                 justifyContent: "center",
                 flexWrap: "wrap",
                 marginTop: "2rem",
+                paddingX: { xs: "3rem" },
               }}
             >
               {developerTools()}
