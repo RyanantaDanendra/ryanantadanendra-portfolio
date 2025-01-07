@@ -20,9 +20,11 @@ import ReactLogo from "../assets/Logo/react.png";
 import Mui from "../assets/Logo/mui.png";
 import Laravel from "../assets/Logo/laravel.png";
 import Mysql from "../assets/Logo/mysql.png";
+import Postman from "../assets/Logo/postman.png";
 // AOS
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Description } from "@mui/icons-material";
 
 const languagesData = () => {
   const languageImages = [Html, Css, Js, Php];
@@ -33,14 +35,14 @@ const languagesData = () => {
         key={index}
         data-aos="fade-up"
         data-aos-delay="600"
-        sx={{ width: { lg: "150px", xs: "100px" }, marginTop: "2rem" }}
+        sx={{ width: "80px" }}
         className="skills-image-wrapper"
       >
         <img
           src={image}
           alt=""
           className="skills-image"
-          style={{ objectFit: "contain", width: "12rem", height: "12rem" }}
+          style={{ width: "100%", marginTop: "2rem" }}
         />
       </Box>
     );
@@ -56,13 +58,13 @@ const frameworksData = () => {
         key={index}
         data-aos="fade-up"
         data-aos-delay="600"
-        sx={{ width: "150px", marginTop: "2rem" }}
+        sx={{ width: "100px", marginTop: "2rem" }}
       >
         <img
           src={image}
           alt=""
           className="skills-image"
-          style={{ objectFit: "contain", width: "12rem", height: "12rem" }}
+          style={{ width: "100%" }}
         />
       </Box>
     );
@@ -70,7 +72,7 @@ const frameworksData = () => {
 };
 
 const developerTools = () => {
-  const toolImages = [Git, Github, Mysql, Wp, Vscode];
+  const toolImages = [Git, Github, Mysql, Wp, Vscode, Postman];
 
   return toolImages.map((image, index) => {
     return (
@@ -78,13 +80,13 @@ const developerTools = () => {
         key={index}
         data-aos="fade-up"
         data-aos-delay="600"
-        sx={{ width: "150px", marginTop: "2rem" }}
+        sx={{ width: "100px" }}
       >
         <img
           src={image}
           alt=""
           className="skills-image"
-          style={{ objectFit: "contain", width: "10rem", height: "10rem" }}
+          style={{ objectFit: "contain", width: "100%" }}
         />
       </Box>
     );
@@ -101,6 +103,8 @@ const Skills = () => {
         sx={{
           height: "100%",
           marginTop: "50px",
+          display: "flex",
+          flexWrap: "wrap",
         }}
       >
         <Typography
@@ -108,7 +112,6 @@ const Skills = () => {
           sx={{
             fontWeight: "bold",
             fontSize: { xs: "2rem", md: "2.5rem", lg: "4rem" },
-            marginLeft: { lg: "130px", sm: 0 },
             textAlign: { lg: "left", sm: "center", xs: "center" },
             fontFamily: "Poppins",
           }}
@@ -118,94 +121,94 @@ const Skills = () => {
         <Grid
           container
           spacing={0}
-          sx={{ marginTop: "80px", paddingX: { lg: "30px", sm: 0 } }}
+          sx={{
+            marginTop: "40px",
+            paddingX: { lg: "30px", sm: 0 },
+            display: "flex",
+            justifyContent: "center",
+            gap: "9rem",
+          }}
         >
-          <Typography
-            variant="h4"
-            sx={{
-              textAlign: { lg: "left", sm: "center", xs: "center" },
-              width: "100vw",
-              fontSize: { xs: "1.5rem", md: "2rem", lg: "2.2rem" },
-              fontFamily: "Poppins",
-            }}
-            data-aos="fade-right"
-            data-aos-delay="400"
-          >
-            Languages
-          </Typography>
           <Grid
             item
-            lg={12}
-            md={9}
-            sm={10}
-            xs={9}
+            md={4}
             sx={{
-              display: "flex",
-              gap: "10rem",
-              justifyContent: "center",
-              flexWrap: "wrap",
               marginTop: "50px",
               paddingX: { xs: "1rem", lg: 0 },
             }}
             className="skills-griditm1"
           >
-            {languagesData()}
+            <Typography>Languages</Typography>
+            <Box
+              className="skills-wrapper"
+              sx={{
+                width: "25rem",
+                height: "100%",
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "center",
+                gap: "2rem",
+                boxShadow: "none",
+              }}
+            >
+              {languagesData()}
+            </Box>
           </Grid>
-          <Typography
-            variant="h4"
-            data-aos="fade-right"
-            data-aos-delay="400"
-            sx={{
-              marginTop: "8rem",
-              textAlign: { lg: "left", sm: "center", xs: "center" },
-              width: "100vw",
-              fontSize: { xs: "1.5rem", md: "2rem", lg: "2.2rem" },
-              fontFamily: "Poppins",
-            }}
-          >
-            Frameworks & Libraries
-          </Typography>
           <Grid
             item
-            xs={12}
+            md={5}
             sx={{
-              display: "flex",
-              gap: "10rem",
-              justifyContent: "center",
-              flexWrap: "wrap",
-              marginTop: "50px",
+              marginTop: { md: "50px", xs: 0 },
               paddingRight: { xs: "2rem", lg: 0 },
             }}
           >
-            {frameworksData()}
+            <Typography>Frameworks</Typography>
+            <Box
+              className="skills-wrapper"
+              sx={{
+                display: "flex",
+                width: "25rem",
+                height: "100%",
+                gap: "1rem",
+                justifyContent: "center",
+                flexWrap: "wrap",
+              }}
+            >
+              {frameworksData()}
+            </Box>
           </Grid>
-          <Typography
-            variant="h4"
-            data-aos="fade-right"
-            data-aos-delay="400"
-            sx={{
-              marginTop: "8rem",
-              textAlign: { lg: "left", xs: "center" },
-              width: "100vw",
-              fontSize: { xs: "1.5rem", md: "2rem", lg: "2.2rem" },
-              fontFamily: "Poppins",
-            }}
-          >
-            Developer Tools
-          </Typography>
           <Grid
             item
-            xs={12}
+            md={5}
             sx={{
-              display: "flex",
-              gap: "10rem",
-              justifyContent: "center",
-              flexWrap: "wrap",
-              marginTop: "50px",
               paddingX: { xs: "2rem", lg: 0 },
             }}
           >
-            {developerTools()}
+            <Typography
+              variant="h3"
+              data-aos="fade-right"
+              data-aos-delay="400"
+              sx={{
+                fontFamily: "Poppins",
+                fontSize: "1rem",
+              }}
+            >
+              Developer Tools
+            </Typography>
+            <Box
+              className="skills-wrapper"
+              sx={{
+                display: "flex",
+                width: "25rem",
+                height: "100%",
+                gap: "1rem",
+                justifyContent: "center",
+                flexWrap: "wrap",
+                marginTop: "2rem",
+              }}
+            >
+              {developerTools()}
+            </Box>
           </Grid>
         </Grid>
       </Container>

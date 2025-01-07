@@ -37,7 +37,7 @@ const Hero = () => {
         maxWidth={false}
         id="Home"
         sx={{
-          MaxHeight: "100vh",
+          MaxHeight: "100%",
           minWidth: "100vw",
         }}
       >
@@ -47,17 +47,16 @@ const Hero = () => {
           sx={{
             display: "flex",
             justifyContent: "center",
-            paddingX: "20px",
+            paddingX: "40px",
           }}
           className="hero-gridcon"
         >
           <Grid
             item
-            lg={4}
-            md={4}
+            md={5}
             xs={12}
             sx={{
-              marginTop: "160px",
+              marginTop: "100px",
             }}
             className="hero-griditm1"
           >
@@ -89,7 +88,7 @@ const Hero = () => {
               data-aos-delay="1500"
               variant="h5"
               sx={{
-                marginTop: { lg: "10px" },
+                fontSize: "1.3rem",
               }}
               className="hero-header-2"
             >
@@ -118,8 +117,15 @@ const Hero = () => {
               Email Me
             </Button>
           </Grid>
-          <Grid item lg={4} md={4} xs={12}>
-            <Box className="image-wrapper">
+          <Grid item md={3} s={7}>
+            <Box
+              className="image-wrapper"
+              sx={{
+                width: "20rem",
+                display: { md: "flex" },
+                justifyContent: { md: "center" },
+              }}
+            >
               <img
                 src={Me}
                 alt="Me"
@@ -128,19 +134,19 @@ const Hero = () => {
                 data-aos-delay="2300"
                 data-aos-easing="ease-out"
                 data-aos-duration="300500"
+                style={{ width: "100%" }}
               />
             </Box>
           </Grid>
           <Grid
             item
-            lg={2}
-            md={2}
+            md={4}
             xs={9}
             sx={{
               marginLeft: { lg: "7rem", xs: 0 },
               display: "flex",
-              alignItems: { xs: "center" },
-              flexDirection: { lg: "column", xs: "row" },
+              alignItems: { xs: "center", md: "end" },
+              flexDirection: { md: "column", xs: "row" },
               justifyContent: "center",
               marginTop: { xs: "3rem" },
               gap: { xs: "2rem" },
@@ -152,8 +158,8 @@ const Hero = () => {
                 data-aos="zoom-out"
                 data-aos-delay="2800"
                 sx={{
-                  width: { lg: "150px", xs: "120px" },
-                  height: { lg: "150px", xs: "120px" },
+                  width: { lg: "100px", xs: "120px" },
+                  height: { lg: "100px", xs: "120px" },
                   backgroundColor: "#003366",
                   display: "flex",
                   justifyContent: "center",

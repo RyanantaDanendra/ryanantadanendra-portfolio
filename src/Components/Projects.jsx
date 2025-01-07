@@ -22,6 +22,8 @@ import DimagesVideo from "../assets/Logo/dimages_video.mp4";
 import DmovieVideo from "../assets/Logo/dmovie_video.mp4";
 import { IconButton } from "@mui/material";
 import InsertLinkIcon from "@mui/icons-material/InsertLink";
+import Html from "../assets/Logo/html.png";
+import Tailwind from "../assets/Logo/tailwind.png";
 // AOS
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -63,8 +65,8 @@ const RenderProjects = ({ project }) => {
       return (
         <Box
           sx={{
-            width: "600px",
-            height: "700px",
+            width: "27rem",
+            height: "26rem",
           }}
         >
           <div
@@ -72,8 +74,6 @@ const RenderProjects = ({ project }) => {
             onMouseLeave={() => setIsHovered(false)}
             style={{
               width: "100%",
-              height: "300px",
-              objectFit: "cover",
             }}
           >
             {isHovered ? (
@@ -84,7 +84,12 @@ const RenderProjects = ({ project }) => {
                 className="project-vid"
               />
             ) : (
-              <img src={project.image} alt="image" className="project-img" />
+              <img
+                src={project.image}
+                alt="image"
+                className="project-img"
+                style={{ width: "100%" }}
+              />
             )}
           </div>
           <Box sx={{ paddingX: "30px" }}>
@@ -98,8 +103,9 @@ const RenderProjects = ({ project }) => {
                 variant="h2"
                 sx={{
                   marginTop: "10px",
-                  fontWeight: "bold",
+                  fontWeight: 200,
                   fontFamily: "Poppins",
+                  fontSize: { md: "2rem" },
                 }}
               >
                 {project.title}
@@ -122,7 +128,11 @@ const RenderProjects = ({ project }) => {
             </Box>
             <Typography
               variant="h5"
-              sx={{ marginTop: "10px", fontFamily: "Poppins" }}
+              sx={{
+                marginTop: "10px",
+                fontFamily: "Poppins",
+                fontSize: "1.2rem",
+              }}
             >
               Made with: {project.madeWith}
             </Typography>
@@ -133,15 +143,14 @@ const RenderProjects = ({ project }) => {
       return (
         <Box
           sx={{
-            width: { lg: "600px", xs: "300px" },
-            height: { lg: "700px", xs: "200px" },
-            marginBottom: "30rem",
+            width: "30rem",
+            height: "30rem",
+            // marginBottom: "30rem",
           }}
         >
           <div
             style={{
               width: "100%",
-              height: "300px",
               objectFit: "cover",
             }}
           >
@@ -151,7 +160,7 @@ const RenderProjects = ({ project }) => {
               muted
               ref={videoRef}
               className="project-vid"
-              style={{ objectFit: "contain" }}
+              style={{ objectFit: "cover", width: "100%" }}
             />
           </div>
           <Box sx={{ paddingX: "10px" }}>
@@ -166,7 +175,7 @@ const RenderProjects = ({ project }) => {
                 sx={{
                   marginTop: "10px",
                   fontWeight: "bold",
-                  fontSize: "2rem",
+                  fontSize: "2.3rem",
                   fontFamily: "Poppins",
                 }}
               >
@@ -207,6 +216,7 @@ const RenderProjects = ({ project }) => {
   return (
     <Grid
       item
+      md={6}
       xs={12}
       data-aos="fade-up"
       data-aos-delay="400"
@@ -273,7 +283,7 @@ const Projects = () => {
       <Container
         maxWidth={false}
         id="Projects"
-        sx={{ height: "100%", marginTop: "10rem" }}
+        sx={{ minHeight: "100vh", marginTop: "10rem" }}
       >
         <Typography
           variant="h3"
