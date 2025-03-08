@@ -53,19 +53,19 @@ const Hero = () => {
         >
           <Grid
             item
-            md={5}
+            sm={4}
             xs={12}
             sx={{
-              marginTop: "100px",
+              marginTop: { xs: "100px", sm: "5rem" },
             }}
             className="hero-griditm1"
           >
             <div
               style={{
-                fontSize: "3rem",
+                fontSize: "2.4rem",
                 fontWeight: 900,
                 fontFamily: "Poppins-bold",
-                height: "10rem",
+                height: "8rem",
               }}
               className="typewriter-wrapper"
             >
@@ -88,7 +88,7 @@ const Hero = () => {
               data-aos-delay="1500"
               variant="h5"
               sx={{
-                fontSize: "1.3rem",
+                fontSize: { sm: "1rem" },
               }}
               className="hero-header-2"
             >
@@ -100,7 +100,7 @@ const Hero = () => {
               data-aos="zoom-in-right"
               data-aos-delay="1800"
               sx={{
-                marginTop: "20px",
+                marginTop: "15px",
                 paddingX: "40px",
                 paddingY: "20px",
                 backgroundColor: "#003366",
@@ -117,13 +117,13 @@ const Hero = () => {
               Email Me
             </Button>
           </Grid>
-          <Grid item md={3} s={7}>
+          <Grid item sm={3} s={7}>
             <Box
               className="image-wrapper"
               sx={{
-                width: "20rem",
-                display: { md: "flex" },
-                justifyContent: { md: "center" },
+                width: "17rem",
+                display: { xs: "flex" },
+                justifyContent: { xs: "center", sm: "start" },
               }}
             >
               <img
@@ -140,15 +140,16 @@ const Hero = () => {
           </Grid>
           <Grid
             item
-            md={4}
+            sm={4}
             xs={9}
             sx={{
               marginLeft: { lg: "7rem", xs: 0 },
+              paddingLeft: { sm: "6rem" },
               display: "flex",
-              alignItems: { xs: "center", md: "end" },
-              flexDirection: { md: "column", xs: "row" },
-              justifyContent: "center",
-              marginTop: { xs: "3rem" },
+              alignItems: { xs: "center", sm: "center" },
+              flexDirection: { sm: "column", xs: "row" },
+              justifyContent: { xs: "center", sm: "start" },
+              marginTop: { xs: "3rem", sm: "5rem" },
               gap: { xs: "2rem" },
             }}
             className="hero-griditm3"
@@ -158,8 +159,8 @@ const Hero = () => {
                 data-aos="zoom-out"
                 data-aos-delay="2800"
                 sx={{
-                  width: { lg: "100px", xs: "120px" },
-                  height: { lg: "100px", xs: "120px" },
+                  width: { sm: "100px", xs: "120px" },
+                  height: { sm: "100px", xs: "120px" },
                   backgroundColor: "#003366",
                   display: "flex",
                   justifyContent: "center",
@@ -177,7 +178,7 @@ const Hero = () => {
                   },
                 }}
               >
-                <GitHubIcon sx={{ color: "white", fontSize: "5rem" }} />
+                <GitHubIcon sx={{ color: "white", fontSize: "4rem" }} />
               </Box>
             </a>
             <a href="https://www.linkedin.com/in/ryananta-danendra-540a272a5/">
@@ -185,8 +186,8 @@ const Hero = () => {
                 data-aos="zoom-out"
                 data-aos-delay="2800"
                 sx={{
-                  width: { lg: "150px", xs: "120px" },
-                  height: { lg: "150px", xs: "120px" },
+                  width: { sm: "100px", xs: "120px" },
+                  height: { sm: "100px", xs: "120px" },
                   backgroundColor: "#003366",
                   display: "flex",
                   justifyContent: "center",
@@ -204,7 +205,7 @@ const Hero = () => {
                   },
                 }}
               >
-                <LinkedInIcon sx={{ color: "white", fontSize: "5rem" }} />
+                <LinkedInIcon sx={{ color: "white", fontSize: "4rem" }} />
               </Box>
             </a>
           </Grid>

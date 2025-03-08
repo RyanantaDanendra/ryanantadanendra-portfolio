@@ -105,6 +105,7 @@ const Skills = () => {
           marginTop: "50px",
           display: "flex",
           flexWrap: "wrap",
+          textAlign: "center",
         }}
       >
         <Typography
@@ -112,7 +113,7 @@ const Skills = () => {
           sx={{
             fontWeight: "bold",
             fontSize: { xs: "2rem", md: "2.5rem", lg: "4rem" },
-            textAlign: { lg: "left", sm: "center", xs: "center" },
+            textAlign: "center",
             fontFamily: "Poppins",
           }}
         >
@@ -131,16 +132,14 @@ const Skills = () => {
         >
           <Grid
             item
-            md={4}
+            sm={4}
             sx={{
               marginTop: "50px",
-              paddingX: { xs: "1rem", lg: 0 },
+              paddingX: { sm: "1rem", lg: 0 },
             }}
             className="skills-griditm1"
           >
-            <Typography sx={{ paddingLeft: { xs: "3rem" } }}>
-              Languages
-            </Typography>
+            <Typography>Languages</Typography>
             <Box
               className="skills-wrapper"
               sx={{
@@ -151,7 +150,8 @@ const Skills = () => {
                 justifyContent: "center",
                 gap: "2rem",
                 boxShadow: "none",
-                paddingX: { xs: "3rem" },
+                paddingRight: "5rem",
+                // paddingX: "2rem",
               }}
             >
               {languagesData()}
@@ -159,15 +159,12 @@ const Skills = () => {
           </Grid>
           <Grid
             item
-            md={5}
+            sm={5}
             sx={{
-              marginTop: { md: "50px", xs: 0 },
-              // paddingRight: { xs: "2rem", lg: 0 },
+              marginTop: { sm: "50px", xs: 0 },
             }}
           >
-            <Typography sx={{ paddingLeft: { xs: "4rem" } }}>
-              Frameworks
-            </Typography>
+            <Typography>Frameworks</Typography>
             <Box
               className="skills-wrapper"
               sx={{
@@ -177,7 +174,8 @@ const Skills = () => {
                 gap: "1rem",
                 justifyContent: "center",
                 flexWrap: "wrap",
-                paddingX: { xs: "3rem" },
+                paddingLeft: "2rem",
+                paddingRight: "4rem",
               }}
             >
               {frameworksData()}
@@ -185,7 +183,7 @@ const Skills = () => {
           </Grid>
           <Grid
             item
-            md={5}
+            sm={5}
             sx={
               {
                 // paddingX: { xs: "2rem", lg: 0 },
@@ -199,7 +197,7 @@ const Skills = () => {
               sx={{
                 fontFamily: "Poppins",
                 fontSize: "1rem",
-                paddingLeft: { xs: "3rem" },
+                // paddingLeft: { xs: "3rem" },
               }}
             >
               Developer Tools
@@ -214,7 +212,7 @@ const Skills = () => {
                 justifyContent: "center",
                 flexWrap: "wrap",
                 marginTop: "2rem",
-                paddingX: { xs: "3rem" },
+                paddingRight: "4rem",
               }}
             >
               {developerTools()}

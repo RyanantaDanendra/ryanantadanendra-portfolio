@@ -82,6 +82,7 @@ const RenderProjects = ({ project }) => {
                 autoPlay
                 muted
                 className="project-vid"
+                style={{ width: "100%" }}
               />
             ) : (
               <img
