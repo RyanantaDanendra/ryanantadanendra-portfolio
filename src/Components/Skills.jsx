@@ -150,8 +150,9 @@ const Skills = () => {
                 justifyContent: "center",
                 gap: "2rem",
                 boxShadow: "none",
-                paddingRight: "5rem",
-                // paddingX: "2rem",
+                // paddingRight: "5rem",
+                paddingX: "2rem",
+                paddingRight: "3rem",
               }}
             >
               {languagesData()}
@@ -174,8 +175,9 @@ const Skills = () => {
                 gap: "1rem",
                 justifyContent: "center",
                 flexWrap: "wrap",
-                paddingLeft: "2rem",
+                // paddingLeft: "2rem",
                 paddingRight: "4rem",
+                paddingX: "2rem",
               }}
             >
               {frameworksData()}
@@ -212,7 +214,7 @@ const Skills = () => {
                 justifyContent: "center",
                 flexWrap: "wrap",
                 marginTop: "2rem",
-                paddingRight: "4rem",
+                // paddingRight: "4rem",
               }}
             >
               {developerTools()}

@@ -88,7 +88,7 @@ const Hero = () => {
               data-aos-delay="1500"
               variant="h5"
               sx={{
-                fontSize: { sm: "1rem" },
+                fontSize: { sm: "1rem", xs: "1rem" },
               }}
               className="hero-header-2"
             >
